@@ -48,8 +48,14 @@ class Database extends EventEmitter {
     }
     find() {
         console.log(this.idToImage)
-        return Object.values(this.idToImage)
-            .sort((imageA, imageB) => imageB.createdAt - imageA.createdAt);
+        return Object.values(this.idToImage).map((e) => {
+               return {
+                   id: e.id,
+                   createdAt: e.createdAt,
+                   size: e.size
+                }
+            }
+        );
     }
 
     toJSON() {
