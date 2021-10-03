@@ -27,6 +27,6 @@ mainRouter.get('/merge', replaceBackground);
 mainRouter.get('/list', getList);
 mainRouter.get('/image/:id', getImage);
 mainRouter.delete('/image/:id', deleteImage);
-mainRouter.post('/upload', upload.single(''), uploadImage);
+mainRouter.post('/upload', upload.single('image'), uploadImage);
 
 module.exports = mainRouter;
